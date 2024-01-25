@@ -1,0 +1,7 @@
+[tool.taskipy.tasks]
+#linux
+#run = "lsof -ti :8501 | xargs kill -9 | streamlit run src/app.py"
+
+#windows
+run =  "streamlit run src/app.py"
+test = "pytest tests -v"
