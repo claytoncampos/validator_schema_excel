@@ -9,7 +9,6 @@ class CategoriaEnum(str, Enum):
 
 
 class Vendas(BaseModel):
-
     """
     Modelo de dados para as vendas.
 
