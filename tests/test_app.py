@@ -65,3 +65,17 @@ def test_check_usuario_pode_inserir_um_excel_e_receber_uma_mensagem(driver):
     # Aguardar a mensagem de sucesso
     sleep(5)
     assert "O schema do arquivo Excel está correto!" in driver.page_source
+
+def test_failed_upload(driver):
+    driver.get("http://localhost:8501")
+
+    # Aguardar um tempo para a aplicação carregar
+    sleep(5)
+
+    # Realizar o upload do arquivo de falha
+    failure_file_path = os.path.abspath("data/failure.xlsx")
+    driver.find_element(By.CSS_SELECTOR, 'input[type="file"]').send_keys(failure_file_path)
+
+    # Aguardar a mensagem de erro
+    sleep(5)
+    assert "Erro na validação" in driver.page_source
