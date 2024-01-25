@@ -19,3 +19,11 @@ source .venv/bin/activate
 # Usuários Windows
 pip install -r requirements.txt  
 ```
+
+3. Execução do projeto:
+```bash
+# Para rodar local
+task run
+# Rodar os testes
+task test
+```
